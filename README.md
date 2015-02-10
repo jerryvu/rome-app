@@ -1,1 +1,1 @@
-# rome-app
+Op het moment nog de standaard Hello World app van Phonegap.
