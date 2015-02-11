@@ -65,7 +65,7 @@ var app = {
     openIMG: function(img) {
     	var viewport = document.getElementById('viewport');
     	app.pageSwitch(img);
-    	viewport.content = "user-scalable=1, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi";
+    	viewport.content = "user-scalable=1, initial-scale=1, maximum-scale=10, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi";
     }
 };
 
