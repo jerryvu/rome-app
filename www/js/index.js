@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var currentPage;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,9 +34,10 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        app.loadMainPage();
     },
     // Update DOM on a Received Event
+    /*
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -45,5 +47,25 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    */
+    loadMainPage: function() {
+    	var mainPage = document.getElementById('main-page');
+    	mainPage.style.display = 'block';
+    	currentPage = mainPage;
+    },
+    pageSwitch: function(page) {
+    	var pageToLoad = document.getElementById(page);
+    	
+    	currentPage.style.display = 'none';
+    	pageToLoad.style.display = 'block';
+    	
+    	currentPage = pageToLoad;
+    },
+    openIMG: function(img) {
+    	var viewport = document.getElementById('viewport');
+    	app.pageSwitch(img);
+    	viewport.content = "user-scalable=1, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi";
     }
 };
+

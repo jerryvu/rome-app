@@ -25,20 +25,27 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta id="viewport" name="viewport" content="user-scalable=1, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+        <div id="main-page" class="page">
+        	<p id="demo">This is the main page</p>
+        	<img src="img/logo.png" onclick="app.openIMG('page-img1')"></img> 
+        	<button onclick="app.pageSwitch('page2')">Click me to go to page 2!</button>
+        </div>
+
+        <div id="page2" class="page">
+        	<p>This is page 2 :)</p>
+        	<button onclick="app.pageSwitch('main-page')">Click me to go back to the main page!</button>
+        </div>
+        <div id="page-img1" class="page">
+        	<img src="img/logo.png" class="page-img"></img>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
