@@ -1,3 +1,4 @@
+var previousPage;
 var currentPage;
 var app = {
 	
@@ -35,8 +36,12 @@ var app = {
     // Switch Pages
     //
     // Unloads current page and loads up new page.
-    pageSwitch: function(page) {
+    pageSwitch: function(page, resetZoom) {
     	var pageToLoad = document.getElementById(page);
+    	
+    	if (resetZoom) {
+    		viewport.content = "user-scalable=1, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi";
+    	}
     	
     	currentPage.style.display = 'none';
     	pageToLoad.style.display = 'block';
@@ -59,12 +64,5 @@ var app = {
 		
     	app.pageSwitch("page-" + id);
     	viewport.content = "user-scalable=1, initial-scale=1, maximum-scale=10, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi";
-	},
-	
-	menu: function(display) {
-		var menuPage = document.getElementById('menu-page');
-		
-		menuPage.style.display = display;
 	}
 };
-

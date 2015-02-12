@@ -13,9 +13,6 @@
         <div id="main-page" class="page">
         	<div class="header">
         		<h2><b>Home Page</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
         	<div class="body">
         		<img src="img/rome-logo.png" width="150px">
@@ -37,9 +34,6 @@
         			<b>Back</b>
         		</div>
         		<h2><b>Activities</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
 			<div class="activity" onclick="app.pageSwitch('page-activity-kerk1')">
 				<p>Kerk 1 - 14-02-2015, 13:00</p>
@@ -57,9 +51,6 @@
         			<b>Back</b>
         		</div>
         		<h2><b>Kerk 1</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
 			<div class="body">
 				<img src="img/Kropswolde_Kerk.png" onclick="app.openIMG('img-kerk1')" height="150px">
@@ -72,9 +63,6 @@
         			<b>Back</b>
         		</div>
         		<h2><b>Kerk 2</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
 			<div class="body">
 				<img src="img/Hervormde_Kerk_Schipluiden.png" onclick="app.openIMG('img-kerk2')" height="150px">
@@ -87,9 +75,6 @@
         			<b>Back</b>
         		</div>
         		<h2><b>Kerk 3</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
 			<div class="body">
 				<img src="img/DSC03144-rk-kerk-ltjbrk-2012-jo.png" onclick="app.openIMG('img-kerk3')" height="150px">
@@ -98,61 +83,30 @@
         </div>
         <div id="page-img-kerk1" class="page">
         	<div class="header">
-        		<div class="btn back" onclick="app.pageSwitch('page-activity-kerk1')">
+        		<div class="btn back" onclick="app.pageSwitch('page-activity-kerk1', true)">
         			<b>Back</b>
         		</div>
         		<h2><b>IMG: Kerk 1</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
         	<img src="img/Kropswolde_Kerk.png" id="img-kerk1"></img>
         </div>
         <div id="page-img-kerk2" class="page">
         	<div class="header">
-        		<div class="btn back" onclick="app.pageSwitch('page-activity-kerk2')">
+        		<div class="btn back" onclick="app.pageSwitch('page-activity-kerk2', true)">
         			<b>Back</b>
         		</div>
         		<h2><b>IMG: Kerk 2</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
         	<img src="img/Hervormde_Kerk_Schipluiden.png" id="img-kerk2"></img>
         </div>
         <div id="page-img-kerk3" class="page">
         	<div class="header">
-        		<div class="btn back" onclick="app.pageSwitch('page-activity-kerk3')">
+        		<div class="btn back" onclick="app.pageSwitch('page-activity-kerk3', true)">
         			<b>Back</b>
         		</div>
         		<h2><b>IMG: Kerk 3</b></h2>
-        		<div class="btn menu" onclick="app.menu('block')">
-        			<b>Menu</b>
-       			</div>
         	</div>
         	<img src="img/DSC03144-rk-kerk-ltjbrk-2012-jo.png" id="img-kerk3"></img>
-        </div>
-        <div id="menu-page" class="page">
-        	<div id="menu-container">
-        		<div id="menu-title">
-        			<b>Menu</b>
-        		</div>
-        		<div class="btn close" onclick="app.menu('none')">
-        			<b>x</b>
-        		</div>
-        		<div class="menu-item">
-        			<b>Menu item 1</b>
-        		</div>
-        		<div class="menu-item">
-        			<b>Menu item 2</b>
-        		</div>
-        		<div class="menu-item">
-        			<b>Menu item 3</b>
-        		</div>
-        		<div class="menu-item">
-        			<b>Settings</b>
-        		</div>
-        	</div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
