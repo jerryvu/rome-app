@@ -1,40 +1,8 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
-
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
@@ -45,31 +13,119 @@ body {
 }
 
 .page {
-	height:100%;
-	width:100%;
 	display:none;
+	height:100vh;
+	width:100vw;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+.header {
+	background-color: #242424;
+	background-image: linear-gradient(to bottom, #242424, #141414);
+	border: 1px solid black;
+	padding:0px;
 }
 
-.page-img {
+.header h2 {
+	margin:0.5em;
+	text-align:center;
+	color: #eeeeee;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.btn {
+    background: #343434;
+    background-image: linear-gradient(to bottom, #444444, #343434);
+  	border-radius: 28px;
+ 	color: #eeeeee;
+  	padding: 8px 15px 8px 15px;
+  	display:inline-block;
+  	position:absolute;
+}
+
+.btn.back {
+	top:0.5em;
+	left:0.75em;
+}
+
+.btn.menu {
+	top:0.5em;
+	right:0.75em;
+}
+
+.btn.close {
+	position:relative;
+	padding:0.2em 0.5em;
+	border-radius:100px;
+	float:right;
+	top:-2em;
+}
+
+.body {
+	margin:1em;
+}
+
+img {
 	display:block;
-	width:340px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.activity {
+	border-bottom:1px solid black;
+	margin:0 1em;
+}
+
+#intro {
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	padding:1em 0;
+}
+
+.page-btn {
+	background-color: #343434;
+	background-image: linear-gradient(to bottom, #444444, #343434);
+	border: 0;
+	padding:1em;
+	color:white;
+	text-align:center;
+	border-radius:15px;
+	margin: 5px;
+}
+
+#menu-page {
+	position:absolute;
+	top:-1vh;
+}
+
+#menu-container {
+	position:relative;
+	background-color: #242424;
+	background-image: linear-gradient(to bottom, #343434, #242424);
+	border-radius: 15px;
+	padding:1em;
+	width: 75%;
+	top:12vh;
+	margin-left:auto;
+	margin-right:auto;
+	color:#eeeeee;
+}
+
+#menu-title {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-size:150%;
+	border-bottom:1px solid #444444;
+}
+
+.menu-item {
+	background-color: #343434;
+	background-image: linear-gradient(to bottom, #444444, #343434);
+	border: 0;
+	padding:1em;
+	color:white;
+	text-align:center;
+	border-radius:15px;
+	margin: 5px;
 }

@@ -1,59 +1,40 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 var currentPage;
 var app = {
+	
     // Application Constructor
+    //
+    // Fired once the HTML has loaded.
     initialize: function() {
         this.bindEvents();
     },
+    
     // Bind Event Listeners
     //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
+    // Bind any events that are required on startup.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
+    
     // deviceready Event Handler
     //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
+    // Triggered when the device is ready.
     onDeviceReady: function() {
         app.loadMainPage();
     },
-    // Update DOM on a Received Event
-    /*
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    },
-    */
+    
+    // Load Main Page
+    //
+    // Sets display of the main page to 'block'.
     loadMainPage: function() {
     	var mainPage = document.getElementById('main-page');
+    	
     	mainPage.style.display = 'block';
     	currentPage = mainPage;
     },
+    
+    // Switch Pages
+    //
+    // Unloads current page and loads up new page.
     pageSwitch: function(page) {
     	var pageToLoad = document.getElementById(page);
     	
@@ -62,10 +43,28 @@ var app = {
     	
     	currentPage = pageToLoad;
     },
-    openIMG: function(img) {
+    
+    // Open Image
+    //
+    // Opens image page, adjusts image size to fit the screen and allows zooming.
+    openIMG: function(id) {
     	var viewport = document.getElementById('viewport');
-    	app.pageSwitch(img);
+		var img = document.getElementById(id);
+		
+		if (img.height / img.width > screen.height / screen.width) {
+			img.height = screen.height;
+		} else {
+			img.width = screen.width;
+		}
+		
+    	app.pageSwitch("page-" + id);
     	viewport.content = "user-scalable=1, initial-scale=1, maximum-scale=10, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi";
-    }
+	},
+	
+	menu: function(display) {
+		var menuPage = document.getElementById('menu-page');
+		
+		menuPage.style.display = display;
+	}
 };
 
