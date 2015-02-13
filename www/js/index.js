@@ -65,7 +65,6 @@ var app = {
     // Adjusts the size of 'page' divs to fill the entire screen and resizes zoomable images to fit the screen.
     setSizes: function() {
         var imgList = document.getElementByClassName('big-img');
-        var pageList = document.getElementByClassName('page');
 
         for (i = 0, i < imgList.length, i++) {
             if (imgList[i].height / imgList[i].width > screen.height / screen.width) {
@@ -73,10 +72,6 @@ var app = {
             } else {
                 imgList[i].width = screen.width;
             }
-        }
-        for (i = 0, i < pageList.length, i++) {
-            pageList[i].style.height = screen.height + "px";
-            pageList[i].style.width = screen.width + "px";
         }
     }
 };
