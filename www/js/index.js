@@ -20,6 +20,7 @@ var app = {
     //
     // Triggered when the device is ready.
     onDeviceReady: function() {
+        app.setSizes();
         app.loadMainPage();
     },
     
@@ -51,18 +52,31 @@ var app = {
     
     // Open Image
     //
-    // Opens image page, adjusts image size to fit the screen and allows zooming.
+    // Opens image page and allows zooming.
     openIMG: function(id) {
     	var viewport = document.getElementById('viewport');
-		var img = document.getElementById(id);
-		
-		if (img.height / img.width > screen.height / screen.width) {
-			img.height = screen.height;
-		} else {
-			img.width = screen.width;
-		}
 		
     	app.pageSwitch("page-" + id);
     	viewport.content = "user-scalable=1, initial-scale=1, maximum-scale=10, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi";
-	}
+    },
+
+    // Set Sizes
+    //
+    // Adjusts the size of 'page' divs to fill the entire screen and resizes zoomable images to fit the screen.
+    setSizes: function() {
+        var imgList = document.getElementByClassName('big-img');
+        var pageList = document.getElementByClassName('page');
+
+        for (i = 0, i < imgList.length, i++) {
+            if (imgList[i].height / imgList[i].width > screen.height / screen.width) {
+                imgList[i].height = screen.height;
+            } else {
+                imgList[i].width = screen.width;
+            }
+        }
+        for (i = 0, i < pageList.length, i++) {
+            pageList[i].style.height = screen.height;
+            pageList[i].style.width = screen.width;
+        }
+    }
 };
