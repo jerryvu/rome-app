@@ -21,6 +21,15 @@ body {
 .header {
 	background-color: #242424;
 	background-image: linear-gradient(to bottom, #242424, #141414);
+        background-image:-webkit-linear-gradient(top, #242424 0%, #141414 51%);
+        background-image:-ms-linear-gradient(top, #242424 0%, #141414 51%);
+        background-image:-webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0, #242424),
+            color-stop(0.51, #141414)
+        );
 	border: 1px solid black;
 	padding:0px;
 }
@@ -34,11 +43,20 @@ body {
 }
 
 .btn {
-    background: #343434;
-    background-image: linear-gradient(to bottom, #444444, #343434);
-  	border-radius: 28px;
- 	color: #eeeeee;
-  	padding: 8px 15px 8px 15px;
+        background: #343434;
+        background-image: linear-gradient(to bottom, #444444, #343434);
+        background-image:-webkit-linear-gradient(top, #444444 0%, #343434 51%);
+        background-image:-ms-linear-gradient(top, #444444 0%, #343434 51%);
+        background-image:-webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0, #444444),
+            color-stop(0.51, #343434)
+        );
+        border-radius: 28px;
+        color: #eeeeee;
+        padding: 8px 15px 8px 15px;
   	display:inline-block;
   	position:absolute;
 }
@@ -85,6 +103,15 @@ img {
 .page-btn {
 	background-color: #343434;
 	background-image: linear-gradient(to bottom, #444444, #343434);
+        background-image:-webkit-linear-gradient(top, #444444 0%, #343434 51%);
+        background-image:-ms-linear-gradient(top, #444444 0%, #343434 51%);
+        background-image:-webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0, #444444),
+            color-stop(0.51, #343434)
+        );
 	border: 0;
 	padding:1em;
 	color:white;
