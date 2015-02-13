@@ -75,8 +75,8 @@ var app = {
             }
         }
         for (i = 0, i < pageList.length, i++) {
-            pageList[i].style.height = screen.height;
-            pageList[i].style.width = screen.width;
+            pageList[i].style.height = screen.height + "px";
+            pageList[i].style.width = screen.width + "px";
         }
     }
 };
