@@ -1,1 +1,1 @@
-Op het moment nog de standaard Hello World app van Phonegap.
+Prototype voor Rome App 2015.
