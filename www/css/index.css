@@ -118,6 +118,11 @@ img {
 	margin: 5px;
 }
 
+.page-btn:active {
+background-color: #BBB;
+}
+
+
 #menu-page {
 	position:absolute;
 	top:-1vh;
