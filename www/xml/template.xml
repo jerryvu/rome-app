@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object>
+	<naam>Naam</naam>
+	<datum>1-3-2015</datum>
+	<tijd>15:00</tijd>
+	<plaatje>bestandnaam</plaatje>
+	<kaart>bestandnaam</kaart>
+	<!--
+		Voor <plaatje></plaatje> doe je de naam van het bestand.
+		Bijvoorbeeld als het bestand www/img/object_images/plaatjenaam.png is, vul je <plaatje>plaatjenaam</plaatje> in.
+		Zorg a.u.b. ook dat het plaatje inderdaad in die map staat omwille van de overzichtelijkheid.
+		Hetzelfde geld voor <kaart></kaart>, alleen dan graag de plaatjes in www/img/map_images doen.
+		Ook moeten alle plaatjes .png zijn.
+		Bij het copy pasten van deze template mag deze comment verwijderd worden.
+	-->
+	<info>
+		Het verhaaltje kan hier.
+	</info>
+	<extrainfo>
+		Wikipedia CTRL+C CTRL+V hier.
+	</extrainfo>
+</object>

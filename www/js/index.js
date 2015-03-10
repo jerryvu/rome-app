@@ -6,14 +6,14 @@ var app = {
     //
     // Fired once the HTML has loaded.
     initialize: function() {
-        app.bindEvents();
+        this.bindEvents();
     },
     
     // Bind Event Listeners
     //
     // Bind any events that are required on startup.
     bindEvents: function() {
-        document.addEventListener('deviceready', app.onDeviceReady, false);
+        document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     
     // deviceready Event Handler
@@ -22,7 +22,6 @@ var app = {
     onDeviceReady: function() {
         app.setSizes();
         app.loadMainPage();
-        app.loadXML();
     },
     
     // Load Main Page
@@ -33,21 +32,6 @@ var app = {
     	
     	mainPage.style.display = 'block';
     	currentPage = mainPage;
-    },
-    
-    loadXML: function() {
-    	if (window.XMLHttpRequest) {
-    		xhttp = new XMLHttpRequest();
-    	}
-    	else {
-    		xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    	}
-    	xhttp.open("GET", "index.xml", false);
-    	xhttp.send();
-    	var xmlDoc = xhttp.responseXML;
-    	
-    	alert(xmlDoc);
-    	document.getElementsByClassName('page-btn')[0].innerHTML = xmlDoc.getElementsByTagName('name')[0].childNodes[0].nodeValue;
     },
     
     // Switch Pages
